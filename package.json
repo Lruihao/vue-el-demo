@@ -1,0 +1,48 @@
+{
+  "name": "vue-el-demo",
+  "version": "0.1.0",
+  "description": "Vue and element-ui related demos.",
+  "keywords": [
+    "vue",
+    "vue2",
+    "element-ui"
+  ],
+  "homepage": "https://lruihao.github.io/vue-el-demo/",
+  "bugs": {
+    "url": "https://github.com/Lruihao/vue-el-demo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lruihao/vue-el-demo.git"
+  },
+  "author": "Lruihao (https://lruihao.cn)",
+  "scripts": {
+    "build": "npm run gr && vue-cli-service build",
+    "gr": "node gen-router.js",
+    "lint": "vue-cli-service lint",
+    "serve": "npm run gr && vue-cli-service serve"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@babel/plugin-transform-private-methods": "^7.22.5",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "core-js": "^3.8.3",
+    "element-ui": "^2.15.13",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "lint-staged": "^11.1.2",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0",
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.1",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  }
+}
