@@ -6,6 +6,12 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/guide',
+    name: 'guide',
+    meta: { description: 'driver.js demo' },
+    component: () => import(/* webpackChunkName: "guide" */ '@/views/guide.vue'),
+  },
+  {
     path: '/',
     name: 'home',
     meta: { description: '首页' },
