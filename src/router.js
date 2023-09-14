@@ -17,6 +17,12 @@ const routes = [
     meta: { description: '首页' },
     component: () => import(/* webpackChunkName: "home" */ '@/views/home.vue'),
   },
+  {
+    path: '/icons',
+    name: 'icons',
+    meta: { description: 'icon 使用范例' },
+    component: () => import(/* webpackChunkName: "icons" */ '@/views/icons.vue'),
+  },
 ]
 
 const router = new VueRouter({
