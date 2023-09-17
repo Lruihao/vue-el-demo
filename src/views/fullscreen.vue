@@ -20,10 +20,8 @@
           :teleport="teleport"
           @change="handleFullscreenChange"
         />
-        <el-image
-          class="fullscreen-image"
-          :src="imageUrl"
-        />
+        <el-image v-show="!isFullscreen" class="fullscreen-image" src="//picsum.photos/640/360?random=1" />
+        <el-image v-show="isFullscreen" class="fullscreen-image" src="//picsum.photos/1280/720?random=1" />
       </div>
     </div>
   </div>
@@ -44,11 +42,6 @@ export default {
       pageOnly: false,
       teleport: false,
     }
-  },
-  computed: {
-    imageUrl() {
-      return this.isFullscreen ? '//picsum.photos/1280/720?random=1' : '//picsum.photos/640/360?random=1'
-    },
   },
   methods: {
     handleFullscreenChange(isFullscreen) {
