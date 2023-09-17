@@ -6,6 +6,12 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/fullscreen',
+    name: 'fullscreen',
+    meta: { description: '全屏切换方案' },
+    component: () => import(/* webpackChunkName: "fullscreen" */ '@/views/fullscreen.vue'),
+  },
+  {
     path: '/guide',
     name: 'guide',
     meta: { description: 'driver.js demo' },
