@@ -111,7 +111,7 @@ export default {
   line-height: #{$headerHeight};
   box-shadow: 0px 3px 7px #cecece;
   width: 100%;
-  z-index: 9;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;

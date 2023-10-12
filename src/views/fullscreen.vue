@@ -68,7 +68,6 @@ export default {
   padding: 20px;
   box-sizing: border-box;
   position: relative;
-  z-index: 10;
 
   .full-screen-toggler {
     position: absolute;

@@ -1,0 +1,304 @@
+/* dashboard 相关样式 */
+$dashboard-border-color: #e6e6e6 !default;
+$dashboard-box-shadow-color: rgba(0, 0, 0, 0.1) !default;
+$dashboard-sidebar-bg: #fafbfc !default;
+$dashboard-placeholder-bg: #fec171 !default;
+
+.dashboard-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+
+  // 隐藏 dashboard 内的滚动条
+  *::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  // 侧栏部分样式
+  %aside-part {
+    border-right: 1px solid $dashboard-border-color;
+    box-shadow: 1px 0 12px 0 $dashboard-box-shadow-color;
+  }
+
+  // 侧栏在右边
+  &[data-direction="right"] {
+    flex-direction: row-reverse;
+
+    %aside-part {
+      border-left: 1px solid $dashboard-border-color;
+      box-shadow: -1px 0 12px 0 $dashboard-box-shadow-color;
+    }
+  }
+
+  // 展开时的样式
+  &[data-is-expand] {
+    .vue-grid-layout {
+      // 背景显示网格辅助线（宽：1/24 高：40+8px）
+      background-image: linear-gradient(90deg, rgba(60, 10, 30, 0.04) 1px, transparent 0),
+        linear-gradient(1turn, rgba(60, 10, 30, 0.04) 1px, transparent 0);
+      background-size: calc((100% - 8px) / 24) 48px;
+      background-position: 4px 4px;
+    }
+  }
+
+  // dashboard 侧边栏
+  .dashboard-aside {
+    height: 100%;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: $dashboard-sidebar-bg;
+    z-index: 10;
+    @extend %aside-part;
+
+    .dashboard-aside-header {
+      font-size: 1.125rem;
+      font-weight: 500;
+      border-bottom: 1px solid $dashboard-border-color;
+      padding: 10px 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: darken($dashboard-sidebar-bg, 1%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      cursor: grab;
+
+      .dashboard-close-btn {
+        border: none;
+        cursor: pointer;
+        color: inherit;
+        transform: scale(1.2);
+        background-color: transparent;
+        font-size: inherit;
+        &:hover {
+          color: #606266;
+        }
+      }
+    }
+
+    .dashboard-aside-main {
+      display: flex;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    .dashboard-categories {
+      width: auto;
+      overflow-y: auto;
+      padding-block: 6px;
+      background-color: darken($dashboard-sidebar-bg, 1%);
+
+      .el-menu-item {
+        padding: 0 10px !important;
+        cursor: default;
+        height: 40px;
+        line-height: 40px;
+
+        span {
+          display: inline-block;
+          line-height: 18px;
+          vertical-align: middle;
+          padding: 8px;
+          width: 100%;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        &:focus,
+        &:hover {
+          background-color: transparent;
+        }
+
+        &:hover span {
+          background-color: darken($dashboard-sidebar-bg, 4%);
+        }
+
+        &.is-active {
+          span {
+            background-color: #e8f1fd;
+          }
+        }
+      }
+    }
+
+    // 有侧边栏时，组件列表的样式
+    .aside-toggler-container + .dashboard-widgets {
+      padding-left: 14px;
+    }
+
+    .dashboard-widgets {
+      list-style: none;
+      margin-block: 0;
+      padding: 2px 10px;
+      overflow-y: auto;
+
+      .dashboard-widget {
+        margin: 8px 0;
+        cursor: move;
+        background-color: darken($dashboard-sidebar-bg, 3%);
+        border-radius: 4px;
+        width: 200px;
+        height: 60px;
+        border: 1px solid $dashboard-border-color;
+        padding-inline: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        position: relative;
+        box-sizing: border-box;
+
+        .widget-info {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          .widget-icon {
+            transform: scale(1.5);
+            margin-left: 0.25rem;
+          }
+          .widget-name {
+            font-size: 14px;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .widget-category {
+          position: absolute;
+          bottom: 6px;
+          left: 6px;
+          transform: scale(0.5) translate(-50%, 50%);
+          font-size: 16px;
+          line-height: 1;
+        }
+      }
+
+      .dashboard-widget-empty {
+        cursor: not-allowed;
+        @extend .dashboard-widget;
+      }
+    }
+  }
+
+  // dashboard 主体部分
+  .dashboard-main {
+    padding: 0;
+    height: 100% !important;
+    overflow: hidden auto;
+    position: relative;
+
+    .vue-grid-layout {
+      min-height: 100%;
+
+      &.dragging {
+        z-index: 1;
+      }
+    }
+
+    .dashboard-layout-empty {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+    }
+
+    // dashboard 组件拖拽占位符的样式
+    .vue-grid-item.vue-grid-placeholder {
+      background: $dashboard-placeholder-bg;
+    }
+
+    .vue-grid-item {
+      // 禁止默认触摸行为
+      touch-action: none;
+
+      // dashboard 组件的通用样式
+      .dashboard-item {
+        height: 100%;
+        width: 100%;
+
+        &:not(.el-card) {
+          border-radius: 4px;
+          border: 1px solid #ebeef5;
+          background-color: #fff;
+          overflow: hidden;
+          color: #303133;
+          transition: 0.3s;
+          --box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+          &.bg-transparent {
+            background-color: transparent;
+            border: none;
+          }
+          &[shadow="always"],
+          &:not([shadow]) {
+            box-shadow: var(--box-shadow);
+          }
+          &[shadow="hover"]:hover {
+            box-shadow: var(--box-shadow);
+          }
+        }
+      }
+      // dashboard 组件的操作按钮
+      .item-operation {
+        display: none;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        z-index: 10;
+        .el-button {
+          padding: 2px 4px;
+        }
+      }
+      // hover 时显示操作按钮
+      &:hover .item-operation {
+        display: block;
+      }
+    }
+  }
+}
+
+// 注入到面包屑左/右侧的操作
+.dashboard-operations {
+  font-size: 1.25rem;
+
+  .dashboard-operation-icon {
+    cursor: pointer;
+    &.el-icon-s-operation {
+      font-size: 1.25rem;
+    }
+  }
+
+  .el-dropdown .el-button-group {
+    display: inline-block;
+  }
+}
+
+.dashboard-operation-menu {
+  .el-dropdown-menu__item {
+    text-align: center;
+    cursor: default;
+
+    &:nth-child(2) {
+      padding-block: 0.5rem;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: inherit;
+    }
+    .el-button i {
+      margin-right: 0;
+    }
+    .el-button--text {
+      padding: 0;
+    }
+  }
+
+  .dashboard-operation-btn {
+    padding: 6px;
+  }
+}

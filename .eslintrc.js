@@ -21,5 +21,15 @@ module.exports = {
       multiline: 1,
     }], // 属性换行配置
     indent: ['error', 2, { SwitchCase: 1 }], // 强制执行一致的缩进样式
+    'vue/singleline-html-element-content-newline': 'off', // 单行元素内容换行
+    'no-unused-vars': [
+      'warn',
+      {
+        vars: 'all', // 检测所有变量
+        args: 'none', // 忽略函数参数
+        caughtErrors: 'none', // 忽略 catch 语句的参数
+        ignoreRestSiblings: true, // 忽略剩余子项 fn(...args)
+      }
+    ],
   },
 }

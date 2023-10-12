@@ -26,7 +26,7 @@ module.exports = defineConfig({
         symbolId: 'icon-[name]',
       })
       .end()
-    // remove origin svg fill attr
+      // remove origin svg fill attr
       .use('svgo-loader')
       .loader('svgo-loader')
       .tap((options) => ({

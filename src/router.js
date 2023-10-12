@@ -6,46 +6,52 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/dashboard/index',
+    name: 'dashboardIndex',
+    meta: { description: '拖拽式仪表盘' },
+    component: () => import(/* webpackChunkName: "dashboardIndex" */ '@/views/dashboard/index'),
+  },
+  {
     path: '/fullscreen',
     name: 'fullscreen',
     meta: { description: '全屏切换方案' },
-    component: () => import(/* webpackChunkName: "fullscreen" */ '@/views/fullscreen.vue'),
+    component: () => import(/* webpackChunkName: "fullscreen" */ '@/views/fullscreen'),
   },
   {
     path: '/guide',
     name: 'guide',
     meta: { description: 'driver.js demo' },
-    component: () => import(/* webpackChunkName: "guide" */ '@/views/guide.vue'),
+    component: () => import(/* webpackChunkName: "guide" */ '@/views/guide'),
   },
   {
     path: '/',
     name: 'home',
     meta: { description: '首页' },
-    component: () => import(/* webpackChunkName: "home" */ '@/views/home.vue'),
+    component: () => import(/* webpackChunkName: "home" */ '@/views/home'),
   },
   {
     path: '/icons',
     name: 'icons',
     meta: { description: 'icon 使用范例' },
-    component: () => import(/* webpackChunkName: "icons" */ '@/views/icons.vue'),
+    component: () => import(/* webpackChunkName: "icons" */ '@/views/icons'),
   },
   {
     path: '/sticky-fixed-col',
     name: 'stickyFixedCol',
     meta: { description: '[sticky-header] 固定列表格' },
-    component: () => import(/* webpackChunkName: "stickyFixedCol" */ '@/views/sticky-fixed-col.vue'),
+    component: () => import(/* webpackChunkName: "stickyFixedCol" */ '@/views/sticky-fixed-col'),
   },
   {
     path: '/sticky-scroller',
     name: 'stickyScroller',
     meta: { description: '[sticky-scroller] 固定横向滚动条' },
-    component: () => import(/* webpackChunkName: "stickyScroller" */ '@/views/sticky-scroller.vue'),
+    component: () => import(/* webpackChunkName: "stickyScroller" */ '@/views/sticky-scroller'),
   },
   {
     path: '/sticky-sum',
     name: 'stickySum',
     meta: { description: '[sticky-footer] 表尾合计行' },
-    component: () => import(/* webpackChunkName: "stickySum" */ '@/views/sticky-sum.vue'),
+    component: () => import(/* webpackChunkName: "stickySum" */ '@/views/sticky-sum'),
   },
 ]
 
