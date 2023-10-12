@@ -30,9 +30,9 @@
     "vue": "^2.6.14",
     "vue-fullscreen": "^2.6.1",
     "vue-grid-layout": "^2.4.0",
-    "vue-minder-editor-extended": "1.2.2",
+    "vue-minder-editor-extended": "^1.2.5",
     "vue-router": "^3.5.1",
-    "vuex": "3"
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
