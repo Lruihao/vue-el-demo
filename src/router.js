@@ -36,6 +36,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "icons" */ '@/views/icons'),
   },
   {
+    path: '/minder-editor',
+    name: 'minderEditor',
+    meta: { description: '脑图编辑器 demo' },
+    component: () => import(/* webpackChunkName: "minderEditor" */ '@/views/minder-editor'),
+  },
+  {
     path: '/sticky-fixed-col',
     name: 'stickyFixedCol',
     meta: { description: '[sticky-header] 固定列表格' },

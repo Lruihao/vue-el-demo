@@ -6,6 +6,7 @@ import App from './App.vue'
 import router from '@/router'
 import SvgIcon from '@/components/SvgIcon'
 import elTableSticky from '@cell-x/el-table-sticky'
+import vueMinderEditor from 'vue-minder-editor-extended'
 
 // register svg component globally
 Vue.component('SvgIcon', SvgIcon)
@@ -19,6 +20,7 @@ Vue.config.productionTip = false
 Vue.prototype.$fullRouter = router
 Vue.prototype.$homeRoute = router.options.routes.find(route => route.name === 'home')
 Vue.use(elTableSticky)
+Vue.use(vueMinderEditor)
 
 new Vue({
   router,

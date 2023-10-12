@@ -7163,6 +7163,11 @@ vue-loader@^17.0.0:
     hash-sum "^2.0.0"
     watchpack "^2.4.0"
 
+vue-minder-editor-extended@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/vue-minder-editor-extended/-/vue-minder-editor-extended-1.2.2.tgz#12751604eea6bb050ac0b04885979b17e22989f4"
+  integrity sha512-lt0zIBH649hn0GLfsFkIlHAGfbZfpTu53RzYLA7RwI2QKuooO8kutrv7Ru0kHNc3pfUp76xp0abV9cRGdAMsBw==
+
 vue-router@^3.5.1:
   version "3.6.5"
   resolved "https://registry.npmjs.org/vue-router/-/vue-router-3.6.5.tgz"
