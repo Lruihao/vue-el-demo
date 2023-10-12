@@ -1022,6 +1022,15 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
+"@cell-x/el-table-sticky@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@cell-x/el-table-sticky/-/el-table-sticky-1.0.2.tgz#6a53742d6f4c1ed5c89b31e29f3f678f18324517"
+  integrity sha512-m2st1HuCkFZ8E1rxcPsoUbhC/Tgoj0WoAT0+59HhUgpZKE+bMxh70idhd2v2ItwNkDJAY6hYaVQC1h9qA8J0qQ==
+  dependencies:
+    gemini-scrollbar "^1.5.3"
+    resize-observer-polyfill "^1.5.0"
+    throttle-debounce "^1.0.1"
+
 "@discoveryjs/json-ext@0.5.7":
   version "0.5.7"
   resolved "https://registry.npmjs.org/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz"
@@ -3691,6 +3700,11 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz"
   integrity sha512-dsKNQNdj6xA3T+QlADDA7mOSlX0qiMINjn0cgr+eGHGsbSHzTabcIogz2+p/iqP1Xs6EP/sS2SbqH+brGTbq0g==
+
+gemini-scrollbar@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.npmjs.org/gemini-scrollbar/-/gemini-scrollbar-1.5.3.tgz#7abc916e103e11f983f15856ef8c583cedef95cf"
+  integrity sha512-3Q4SrxkJ+ei+I5PlcRZCfPePv3EduP7xusOWp7Uw0+XywEWred7Nq9hoaP2IQh1vRjoidaVODV3rO3icFH/e5A==
 
 gensync@^1.0.0-beta.2:
   version "1.0.0-beta.2"

@@ -5,6 +5,7 @@ import '@/assets/css/index.scss'
 import App from './App.vue'
 import router from '@/router'
 import SvgIcon from '@/components/SvgIcon'
+import elTableSticky from '@cell-x/el-table-sticky'
 
 // register svg component globally
 Vue.component('SvgIcon', SvgIcon)
@@ -17,6 +18,7 @@ Vue.use(ElementUI)
 Vue.config.productionTip = false
 Vue.prototype.$fullRouter = router
 Vue.prototype.$homeRoute = router.options.routes.find(route => route.name === 'home')
+Vue.use(elTableSticky)
 
 new Vue({
   router,

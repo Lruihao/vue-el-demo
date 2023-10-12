@@ -23,6 +23,7 @@
     "serve": "npm run gr && vue-cli-service serve"
   },
   "dependencies": {
+    "@cell-x/el-table-sticky": "^1.0.2",
     "core-js": "^3.8.3",
     "driver.js": "^1.2.1",
     "element-ui": "^2.15.13",

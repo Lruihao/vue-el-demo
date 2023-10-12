@@ -29,6 +29,24 @@ const routes = [
     meta: { description: 'icon 使用范例' },
     component: () => import(/* webpackChunkName: "icons" */ '@/views/icons.vue'),
   },
+  {
+    path: '/sticky-fixed-col',
+    name: 'stickyFixedCol',
+    meta: { description: '[sticky-header] 固定列表格' },
+    component: () => import(/* webpackChunkName: "stickyFixedCol" */ '@/views/sticky-fixed-col.vue'),
+  },
+  {
+    path: '/sticky-scroller',
+    name: 'stickyScroller',
+    meta: { description: '[sticky-scroller] 固定横向滚动条' },
+    component: () => import(/* webpackChunkName: "stickyScroller" */ '@/views/sticky-scroller.vue'),
+  },
+  {
+    path: '/sticky-sum',
+    name: 'stickySum',
+    meta: { description: '[sticky-footer] 表尾合计行' },
+    component: () => import(/* webpackChunkName: "stickySum" */ '@/views/sticky-sum.vue'),
+  },
 ]
 
 const router = new VueRouter({
