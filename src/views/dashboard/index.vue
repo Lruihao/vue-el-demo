@@ -1,4 +1,5 @@
-<!-- 拖拽式仪表盘 -->
+<!-- 拖拽式仪表盘-->
+<!-- 文档：https://lruihao.cn/posts/draggable-dashboard/ -->
 <script>
 import Dashboard, { registerComponents } from '@/components/Dashboard'
 

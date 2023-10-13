@@ -6,6 +6,12 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/',
+    name: 'home',
+    meta: { description: '首页' },
+    component: () => import(/* webpackChunkName: "home" */ '@/views/home'),
+  },
+  {
     path: '/dashboard/index',
     name: 'dashboardIndex',
     meta: { description: '拖拽式仪表盘' },
@@ -22,12 +28,6 @@ const routes = [
     name: 'guide',
     meta: { description: 'driver.js demo' },
     component: () => import(/* webpackChunkName: "guide" */ '@/views/guide'),
-  },
-  {
-    path: '/',
-    name: 'home',
-    meta: { description: '首页' },
-    component: () => import(/* webpackChunkName: "home" */ '@/views/home'),
   },
   {
     path: '/icons',
