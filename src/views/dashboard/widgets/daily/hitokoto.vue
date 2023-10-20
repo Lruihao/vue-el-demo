@@ -6,14 +6,13 @@
     shadow="never"
     :data-is-collapse="$dashboard.isCollapse"
   >
-    <div class="hitokoto-body">
+    <div class="hitokoto-body" title="点击左键复制，右键切换">
       <div class="hitokoto-operation">
         <i class="el-icon-document-copy" title="复制" @click="copy" />
         <i class="el-icon-refresh" title="切换" @click="getSentence" />
         <i class="el-icon-search" title="搜索" @click="search" />
       </div>
       <span
-        title="点击左键复制，右键切换"
         class="hitokoto-text"
         @mousedown="sentenceMousedown"
       >{{ sentence.hitokoto }}</span>
