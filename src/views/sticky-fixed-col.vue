@@ -1,4 +1,4 @@
-<!-- [sticky-header] 固定列表格 -->
+<!-- v-sticky-header 固定列表格 -->
 <template>
   <div>
     <div class="page-header">

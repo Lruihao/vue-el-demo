@@ -42,21 +42,27 @@ const routes = [
     component: () => import(/* webpackChunkName: "minderEditor" */ '@/views/minder-editor'),
   },
   {
+    path: '/set-height-adaptive',
+    name: 'setHeightAdaptive',
+    meta: { description: 'v-height-adaptive 高度自适应的表格' },
+    component: () => import(/* webpackChunkName: "setHeightAdaptive" */ '@/views/set-height-adaptive'),
+  },
+  {
     path: '/sticky-fixed-col',
     name: 'stickyFixedCol',
-    meta: { description: '[sticky-header] 固定列表格' },
+    meta: { description: 'v-sticky-header 固定列表格' },
     component: () => import(/* webpackChunkName: "stickyFixedCol" */ '@/views/sticky-fixed-col'),
   },
   {
     path: '/sticky-scroller',
     name: 'stickyScroller',
-    meta: { description: '[sticky-scroller] 固定横向滚动条' },
+    meta: { description: 'v-sticky-scroller 固定横向滚动条' },
     component: () => import(/* webpackChunkName: "stickyScroller" */ '@/views/sticky-scroller'),
   },
   {
     path: '/sticky-sum',
     name: 'stickySum',
-    meta: { description: '[sticky-footer] 表尾合计行' },
+    meta: { description: 'v-sticky-footer 表尾合计行' },
     component: () => import(/* webpackChunkName: "stickySum" */ '@/views/sticky-sum'),
   },
 ]

@@ -1,4 +1,4 @@
-<!-- [sticky-footer] 表尾合计行 -->
+<!-- v-sticky-footer 表尾合计行 -->
 <template>
   <div>
     <el-table

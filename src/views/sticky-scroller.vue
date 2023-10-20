@@ -1,4 +1,4 @@
-<!-- [sticky-scroller] 固定横向滚动条 -->
+<!-- v-sticky-scroller 固定横向滚动条 -->
 <template>
   <div>
     <div class="page-header">
