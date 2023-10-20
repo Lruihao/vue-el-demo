@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export default {
   /**
-   * 通过 route 获取 dashboard 数组（后端自动获取组织ID）
+   * 通过 route 获取 dashboard 数组（后端自动获取组织 ID）
    * @param {Object} data
    * @param {String} data.route 仪表盘路由
    * @returns

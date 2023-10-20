@@ -148,7 +148,7 @@
           <button class="dashboard-close-btn el-icon-close" aria-label="Close" title="关闭" @click="isCollapse = true" />
         </header>
         <main class="dashboard-aside-main">
-          <!-- 组件分类菜单（每个模板自带“通用”分类，分类超过2个才显示菜单） -->
+          <!-- 组件分类菜单（每个模板自带“通用”分类，分类超过 2 个才显示菜单） -->
           <el-menu
             v-if="componentsList.length > 2"
             v-show="!menuCollapse"
@@ -360,7 +360,7 @@ export default {
      * @var {Boolean} isCollapse 是否折叠侧边栏
      * @var {Number} colNum 栅格列数
      * @var {Number} rowHeight 栅格行高
-     * @var {Array} gaps 栅格间隙 [水平间隙, 垂直间隙] e.g. [8, 8]
+     * @var {Array} gaps 栅格间隙 [水平间隙，垂直间隙] e.g. [8, 8]
      * @var {Element} dashboardGrid 可接收拖放的栅格容器
      * @var {Object} dashboard 仪表盘数据
      * @var {Number} dashboard.id 仪表盘 ID
@@ -932,6 +932,7 @@ export default {
   }
   .dashboard-container {
     flex: auto;
+    overflow: hidden;
   }
 }
 </style>

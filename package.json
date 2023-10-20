@@ -23,10 +23,13 @@
     "serve": "npm run gr && vue-cli-service serve"
   },
   "dependencies": {
+    "@antv/g2plot": "^2.4.31",
     "@cell-x/el-table-sticky": "^1.0.2",
+    "@opd/g2plot-vue": "^3.6.7",
     "core-js": "^3.8.3",
     "driver.js": "^1.2.1",
     "element-ui": "^2.15.13",
+    "moment": "^2.29.4",
     "vue": "^2.6.14",
     "vue-fullscreen": "^2.6.1",
     "vue-grid-layout": "^2.4.0",

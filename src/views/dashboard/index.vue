@@ -4,8 +4,10 @@
 import Dashboard, { registerComponents } from '@/components/Dashboard'
 
 // 加载 widgets 目录下所有组件
-// const requireComponents = require.context('./widgets', true, /\.vue$/)
-// const components = registerComponents(requireComponents)
+const requireComponentsCharts = require.context('./widgets/charts', true, /\.vue$/)
+const componentsCharts = registerComponents(requireComponentsCharts)
+const requireComponentsDaily = require.context('./widgets/daily', true, /\.vue$/)
+const componentsDaily = registerComponents(requireComponentsDaily)
 
 export default {
   name: 'TrackingDashboard',
@@ -17,7 +19,8 @@ export default {
     }
   },
   created() {
-    // this.addComponents('分类1', components, true)
+    this.addComponents('图表组件', componentsCharts)
+    this.addComponents('日常组件', componentsDaily)
   },
 }
 </script>
