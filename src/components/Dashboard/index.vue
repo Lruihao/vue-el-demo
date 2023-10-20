@@ -459,11 +459,10 @@ export default {
       this.hasEditPermission = !val
     },
   },
-  created() {
+  mounted() {
     // 获取布局数据
     this.getDashboard()
-  },
-  mounted() {
+
     this.dashboardGrid = document.querySelector('.dashboard-main .vue-grid-layout')
     this.dashboardGrid.addEventListener('dragover', this.onDragoverDashboard)
     this.dashboardGrid.addEventListener('drop', this.onDropDashboard)

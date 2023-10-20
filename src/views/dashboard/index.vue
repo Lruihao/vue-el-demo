@@ -10,17 +10,19 @@ const requireComponentsDaily = require.context('./widgets/daily', true, /\.vue$/
 const componentsDaily = registerComponents(requireComponentsDaily)
 
 export default {
-  name: 'TrackingDashboard',
+  name: 'HomeDashboard',
   extends: Dashboard,
   data() {
     return {
       // 设置默认布局
-      defaultLayout: [],
+      defaultLayout: [
+        { i: 1, component: 'HitokotoWidget', x: 0, y: 6, params: { c: ['d', 'h', 'i', 'j', 'k'], min: 0, max: 30 }, w: 24, h: 1, minW: 8, maxW: 24, maxH: 1, isResizable: true },
+      ],
     }
   },
   created() {
-    this.addComponents('图表组件', componentsCharts)
-    this.addComponents('日常组件', componentsDaily)
+    this.addComponents('图表', componentsCharts)
+    this.addComponents('日常', componentsDaily)
   },
 }
 </script>
