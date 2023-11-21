@@ -81,4 +81,7 @@ export default {
     object-fit: cover;
   }
 }
+.is-fullscreen-wrapper {
+  z-index: 2000;
+}
 </style>
