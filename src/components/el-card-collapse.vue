@@ -3,15 +3,15 @@
     <div
       v-if="$slots.header || header"
       class="el-card__header"
-      @click="toggleBody"
+      :class="isCollapseSelf ? 'collapse-icon-right' : 'collapse-icon-down'"
+      @click="isCollapseSelf = !isCollapseSelf"
     >
       <slot name="header">{{ header }}</slot>
     </div>
     <div
-      ref="body"
       class="el-card__body"
       :style="bodyStyle"
-      :class="{'is-collapse': isCollapse}"
+      :class="{'is-collapse': isCollapseSelf}"
     >
       <slot />
     </div>
@@ -29,16 +29,42 @@ export default {
       default: false,
     },
   },
-  methods: {
-    toggleBody() {
-      this.$refs.body.classList.toggle('is-collapse')
-    },
+  data() {
+    return {
+      isCollapseSelf: this.isCollapse,
+    }
   },
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .el-card__header {
   cursor: pointer;
+  position: relative;
+
+  &::after {
+    font-family: element-icons !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: baseline;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &.collapse-icon-right::after {
+    content: '\e6e0';
+  }
+  &.collapse-icon-down::after {
+    content: '\e6df';
+  }
 }
 .is-collapse {
   display: none;

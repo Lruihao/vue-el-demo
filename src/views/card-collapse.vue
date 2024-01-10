@@ -2,9 +2,9 @@
 <template>
   <div>
     <el-card-collapse class="box-card" :is-collapse="isCollapse">
-      <div slot="header" class="clearfix">
+      <div slot="header" class="flex-between">
         <span>卡片名称</span>
-        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+        <el-button style="padding: 3px 0; margin-right: 10px;" type="text">操作按钮</el-button>
       </div>
       <div v-for="o in 4" :key="o" class="text item">
         {{ '列表内容 ' + o }}
@@ -33,13 +33,10 @@ export default {
   margin-bottom: 18px;
 }
 
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-}
-.clearfix:after {
-  clear: both
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .box-card {
