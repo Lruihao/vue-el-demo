@@ -7,6 +7,7 @@ import router from '@/router'
 import SvgIcon from '@/components/SvgIcon'
 import elTableSticky from '@cell-x/el-table-sticky'
 import vueMinderEditor from 'vue-minder-editor-extended'
+import ElCardCollapse from '@/components/el-card-collapse.vue'
 
 // register svg component globally
 Vue.component('SvgIcon', SvgIcon)
@@ -21,6 +22,7 @@ Vue.prototype.$fullRouter = router
 Vue.prototype.$homeRoute = router.options.routes.find(route => route.name === 'home')
 Vue.use(elTableSticky)
 Vue.use(vueMinderEditor)
+Vue.component('ElCardCollapse', ElCardCollapse)
 
 new Vue({
   router,

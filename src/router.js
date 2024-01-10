@@ -18,6 +18,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "dashboardIndex" */ '@/views/dashboard/index'),
   },
   {
+    path: '/card-collapse',
+    name: 'cardCollapse',
+    meta: { description: '可折叠的 el-card' },
+    component: () => import(/* webpackChunkName: "cardCollapse" */ '@/views/card-collapse'),
+  },
+  {
     path: '/fullscreen',
     name: 'fullscreen',
     meta: { description: '全屏切换方案' },
