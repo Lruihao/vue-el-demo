@@ -25,11 +25,14 @@
   "dependencies": {
     "@antv/g2plot": "^2.4.31",
     "@cell-x/el-table-sticky": "^1.0.2",
+    "@interactjs/core": "1.10.2",
+    "@interactjs/utils": "1.10.2",
     "@opd/g2plot-vue": "^3.6.7",
     "core-js": "^3.8.3",
     "driver.js": "^1.2.1",
     "element-ui": "^2.15.13",
     "moment": "^2.29.4",
+    "v-code-diff": "^1.8.0",
     "vue": "^2.6.14",
     "vue-fullscreen": "^2.6.1",
     "vue-grid-layout": "^2.4.0",
@@ -41,6 +44,7 @@
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
     "@babel/plugin-transform-private-methods": "^7.22.5",
+    "@babel/runtime": "^7.13.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
@@ -52,14 +56,10 @@
     "sass-loader": "^12.0.0",
     "svg-sprite-loader": "^6.0.11",
     "svgo-loader": "^4.0.0",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^5.0.0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
-  },
-  "peerDependencies": {
-    "@interactjs/core": "1.10.2",
-    "@interactjs/utils": "1.10.2",
-    "webpack": "^5.0.0"
   }
 }

@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'CardCollapse',
+  name: 'CardCollapseView',
   data() {
     return {
       isCollapse: true,

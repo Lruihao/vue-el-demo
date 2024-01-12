@@ -24,6 +24,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "cardCollapse" */ '@/views/card-collapse'),
   },
   {
+    path: '/code-diff',
+    name: 'codeDiff',
+    meta: { description: 'code diff 测试' },
+    component: () => import(/* webpackChunkName: "codeDiff" */ '@/views/code-diff'),
+  },
+  {
     path: '/fullscreen',
     name: 'fullscreen',
     meta: { description: '全屏切换方案' },
