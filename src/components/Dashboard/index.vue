@@ -164,7 +164,7 @@
               <span>{{ item.category }} ({{ item.components.length }})</span>
             </el-menu-item>
           </el-menu>
-          <aside-toggler v-if="componentsList.length > 2" :is-collapse.sync="menuCollapse" tooltip="分类" />
+          <AsideToggler v-if="componentsList.length > 2" :is-collapse.sync="menuCollapse" tooltip="分类" />
           <!-- 组件列表 -->
           <ul class="dashboard-widgets">
             <li v-if="!componentsByCategory.length" class="dashboard-widget-empty">

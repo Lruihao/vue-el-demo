@@ -29,7 +29,7 @@
         >±{{ stat.ignoreAdditionsNum + stat.ignoreDeletionsNum }} 忽略</span>
         <IgnoreMatchingPopover
           :ignore-enabled="true"
-          @change="setIgnoreMatchingLines('collection', $event)"
+          @change="(val) => ignoreMatchingLines = val"
         />
       </template>
     </code-diff>
