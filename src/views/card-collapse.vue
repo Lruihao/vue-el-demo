@@ -1,7 +1,7 @@
 <!-- 可折叠的 el-card -->
 <template>
   <div>
-    <el-card-collapse class="box-card" :is-collapse="isCollapse">
+    <ElCardCollapse class="box-card" :is-collapse="isCollapse">
       <div slot="header" class="flex-between">
         <span>卡片名称</span>
         <el-button style="padding: 3px 0; margin-right: 10px;" type="text">操作按钮</el-button>
@@ -9,7 +9,7 @@
       <div v-for="o in 4" :key="o" class="text item">
         {{ '列表内容 ' + o }}
       </div>
-    </el-card-collapse>
+    </ElCardCollapse>
   </div>
 </template>
 

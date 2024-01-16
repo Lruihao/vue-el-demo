@@ -80,7 +80,7 @@ export default {
       ],
     },
     [
-      h('svg-icon', {
+      h('SvgIcon', {
         props: {
           iconClass: this.isFullscreen ? 'exit-fullscreen' : 'fullscreen',
         }

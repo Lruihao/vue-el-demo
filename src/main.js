@@ -4,10 +4,10 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/styles/index.scss'
 import App from './App.vue'
 import router from '@/router'
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon.vue'
 import elTableSticky from '@cell-x/el-table-sticky'
 import vueMinderEditor from 'vue-minder-editor-extended'
-import ElCardCollapse from '@/components/el-card-collapse.vue'
+import ElCardCollapse from '@/components/ElCardCollapse.vue'
 
 // register svg component globally
 Vue.component('SvgIcon', SvgIcon)

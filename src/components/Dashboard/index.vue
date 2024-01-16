@@ -123,7 +123,7 @@
           刷新
         </el-button>
         <el-divider direction="vertical" />
-        <full-screen-toggler target=".page-container" />
+        <FullScreenToggler target=".page-container" />
       </div>
     </header>
     <el-container
@@ -193,7 +193,7 @@
                   :class="component.widget.icon || 'el-icon-postcard'"
                   class="widget-icon"
                 />
-                <svg-icon v-else :icon-class="component.widget.icon" class="widget-icon" />
+                <SvgIcon v-else :icon-class="component.widget.icon" class="widget-icon" />
                 <span class="widget-name">{{ component.widget.name }}</span>
               </span>
               <el-button icon="el-icon-plus" circle size="mini" @click="addItem(component.name, component.widget)" />
@@ -291,15 +291,15 @@
         </el-empty>
       </el-main>
     </el-container>
-    <dialog-edit ref="dialogEdit" @refresh="getDashboard" />
+    <DialogEdit ref="dialogEdit" @refresh="getDashboard" />
   </div>
 </template>
 
 <script>
 import { GridLayout, GridItem } from 'vue-grid-layout'
-import DialogEdit from './dialog-edit'
+import DialogEdit from './DialogEdit.vue'
 import AsideToggler from '@/components/AsideToggler'
-import FullScreenToggler from '@/components/FullScreenToggler'
+import FullScreenToggler from '@/components/FullScreenToggler.vue'
 // 本项目纯前端未配置 API，API 设计参考 src/api/dashboard.js
 // import dashboardAPI from '@/api/dashboard'
 import Vue from 'vue'

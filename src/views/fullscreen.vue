@@ -3,7 +3,7 @@
   <div>
     <div class="page-header">
       <b>FullScreenToggler 组件切换全屏 👉 </b>
-      <full-screen-toggler target=".page-container" />
+      <FullScreenToggler target=".page-container" />
     </div>
     <div>
       <div class="fullscreen-toolbar">
@@ -12,7 +12,7 @@
         <el-switch v-model="teleport" active-text="teleport" :disabled="bodyAgent" />
       </div>
       <div class="fullscreen-wrapper">
-        <full-screen-toggler
+        <FullScreenToggler
           target=".fullscreen-wrapper"
           fullscreen-class="is-fullscreen-wrapper"
           :body-agent="bodyAgent"

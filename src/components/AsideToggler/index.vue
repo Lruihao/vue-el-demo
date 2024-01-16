@@ -16,7 +16,7 @@
 <script>
 /**
  * 侧栏折叠按钮，用法参考功能用例、产品版本管理等页面
- * @example <aside-toggler :is-collapse="isCollapse" />
+ * @example <AsideToggler :is-collapse="isCollapse" />
  */
 export default {
   name: 'AsideToggler',
