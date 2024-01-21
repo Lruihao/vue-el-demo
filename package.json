@@ -36,7 +36,7 @@
     "vue": "^2.6.14",
     "vue-fullscreen": "^2.6.1",
     "vue-grid-layout": "^2.4.0",
-    "vue-minder-editor-extended": "^1.2.5",
+    "vue-minder-editor-extended": "^1.2.8",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
   },
