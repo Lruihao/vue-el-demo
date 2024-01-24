@@ -30,6 +30,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "codeDiff" */ '@/views/code-diff'),
   },
   {
+    path: '/custom-directive',
+    name: 'customDirective',
+    meta: { description: '自定义指令测试' },
+    component: () => import(/* webpackChunkName: "customDirective" */ '@/views/custom-directive'),
+  },
+  {
     path: '/fullscreen',
     name: 'fullscreen',
     meta: { description: '全屏切换方案' },

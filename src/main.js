@@ -8,6 +8,7 @@ import SvgIcon from '@/components/SvgIcon.vue'
 import elTableSticky from '@cell-x/el-table-sticky'
 import vueMinderEditor from 'vue-minder-editor-extended'
 import ElCardCollapse from '@/components/ElCardCollapse.vue'
+import Clickoutside from 'element-ui/src/utils/clickoutside'
 
 // register svg component globally
 Vue.component('SvgIcon', SvgIcon)
@@ -23,6 +24,14 @@ Vue.prototype.$homeRoute = router.options.routes.find(route => route.name === 'h
 Vue.use(elTableSticky)
 Vue.use(vueMinderEditor)
 Vue.component('ElCardCollapse', ElCardCollapse)
+// v-clickoutside 指令，用于点击元素外部触发事件
+Vue.directive('clickoutside', Clickoutside)
+// v-focus 指令，用于元素聚焦
+Vue.directive('focus', {
+  inserted: function (el) {
+    el.focus()
+  }
+})
 
 new Vue({
   router,
