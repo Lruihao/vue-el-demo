@@ -1236,10 +1236,10 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
-"@cell-x/el-table-sticky@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@cell-x/el-table-sticky/-/el-table-sticky-1.0.2.tgz#6a53742d6f4c1ed5c89b31e29f3f678f18324517"
-  integrity sha512-m2st1HuCkFZ8E1rxcPsoUbhC/Tgoj0WoAT0+59HhUgpZKE+bMxh70idhd2v2ItwNkDJAY6hYaVQC1h9qA8J0qQ==
+"@cell-x/el-table-sticky@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@cell-x/el-table-sticky/-/el-table-sticky-1.0.3.tgz#02b57a52bacf60dfb180fd59a39566a1ad50310a"
+  integrity sha512-xLwrdawOgvNHYwBzjdDKz/A5qiPsagtm2SWv558V2HlSPrjd9wmAQAaCYjxuGJaK+cTNUvDMR154kN6OgTGjcw==
   dependencies:
     gemini-scrollbar "^1.5.3"
     resize-observer-polyfill "^1.5.0"
