@@ -66,7 +66,7 @@
                 @click.prevent
               />
             </el-tooltip>
-            <span>{{ row.meta.description }}</span>
+            <span>{{ row.meta && row.meta.description }}</span>
           </template>
         </el-table-column>
       </el-table>

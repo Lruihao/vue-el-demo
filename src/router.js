@@ -60,6 +60,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "minderEditor" */ '@/views/minder-editor'),
   },
   {
+    path: '/overflow-tooltip',
+    name: 'overflowTooltip',
+    meta: { description: 'v-overflow-tooltip 指令' },
+    component: () => import(/* webpackChunkName: "overflowTooltip" */ '@/views/overflow-tooltip'),
+  },
+  {
     path: '/set-height-adaptive',
     name: 'setHeightAdaptive',
     meta: { description: 'v-height-adaptive 高度自适应的表格' },
