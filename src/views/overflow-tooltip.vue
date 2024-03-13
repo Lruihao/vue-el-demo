@@ -1,6 +1,7 @@
 <!-- v-overflow-tooltip 指令 -->
 <template>
   <div>
+    <el-input v-model="content" placeholder="修改显示内容" />
     <h2>v-overflow-tooltip</h2>
     <div>
       <div>文本溢出（100px）：</div>
