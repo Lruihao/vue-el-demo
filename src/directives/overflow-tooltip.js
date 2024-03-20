@@ -20,7 +20,7 @@ const setTooltip = (el, binding) => {
       background: '#303133',
       color: '#fff',
       fontSize: '12px',
-      zIndex: '2000',
+      zIndex: '6000',
       padding: '10px',
       borderRadius: '4px',
       lineHeight: 1.2,
@@ -60,6 +60,18 @@ const plugin = {
           textOverflow: 'ellipsis',
           whiteSpace: 'nowrap',
         })
+        // 监控元素可见性变化
+        const observer = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+            setTooltip(el, binding)
+          }
+        })
+        observer.observe(el)
+        // 监控元素宽度变化
+        const resizeObserver = new ResizeObserver(() => {
+          setTooltip(el, binding)
+        })
+        resizeObserver.observe(el)
         // 设置浮层内容
         setTooltip(el, binding)
       },
