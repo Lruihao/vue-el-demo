@@ -36,6 +36,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "customDirective" */ '@/views/custom-directive'),
   },
   {
+    path: '/dom-to-image',
+    name: 'domToImage',
+    meta: { description: 'dom-to-image vs dom-to-image more' },
+    component: () => import(/* webpackChunkName: "domToImage" */ '@/views/dom-to-image'),
+  },
+  {
     path: '/fullscreen',
     name: 'fullscreen',
     meta: { description: '全屏切换方案' },

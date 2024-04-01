@@ -29,6 +29,8 @@
     "@interactjs/utils": "1.10.2",
     "@opd/g2plot-vue": "^3.6.7",
     "core-js": "^3.8.3",
+    "dom-to-image": "^2.6.0",
+    "dom-to-image-more": "^3.3.0",
     "driver.js": "^1.2.1",
     "element-ui": "^2.15.13",
     "moment": "^2.29.4",
