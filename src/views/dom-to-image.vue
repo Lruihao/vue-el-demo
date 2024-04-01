@@ -1,7 +1,7 @@
-<!-- dom-to-image vs dom-to-image more -->
+<!-- dom-to-image vs dom-to-image-more -->
 <template>
   <div>
-    <h2>dom-to-image vs dom-to-image more</h2>
+    <h2>dom-to-image vs dom-to-image-more</h2>
     <p>
       Select a PNG image 👇
       <el-link type="primary" :href="srcUrl" style="margin-left: 13rem;">view source</el-link>
@@ -48,13 +48,14 @@ export default {
         })
     },
     handleDownload2() {
-      domtoimagemore.toPng(document.querySelector('img.preview'))
-        .then((dataUrl) => {
-          const link = document.createElement('a')
-          link.download = 'preview-more.png'
-          link.href = dataUrl
-          link.click()
-        })
+      domtoimagemore.toPng(document.querySelector('img.preview'), {
+        cacheBust: true
+      }).then((dataUrl) => {
+        const link = document.createElement('a')
+        link.download = 'preview-more.png'
+        link.href = dataUrl
+        link.click()
+      })
     }
   },
 }

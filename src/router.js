@@ -38,7 +38,7 @@ const routes = [
   {
     path: '/dom-to-image',
     name: 'domToImage',
-    meta: { description: 'dom-to-image vs dom-to-image more' },
+    meta: { description: 'dom-to-image vs dom-to-image-more' },
     component: () => import(/* webpackChunkName: "domToImage" */ '@/views/dom-to-image'),
   },
   {
