@@ -18,6 +18,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "dashboardIndex" */ '@/views/dashboard/index'),
   },
   {
+    path: '/apple-devices-preview',
+    name: 'appleDevicesPreview',
+    meta: { description: '网站预览图生成' },
+    component: () => import(/* webpackChunkName: "appleDevicesPreview" */ '@/views/apple-devices-preview'),
+  },
+  {
     path: '/card-collapse',
     name: 'cardCollapse',
     meta: { description: '可折叠的 el-card' },
