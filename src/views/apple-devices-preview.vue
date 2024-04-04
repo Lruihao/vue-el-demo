@@ -4,18 +4,23 @@
     <div class="page-header">
       <el-input v-model="desktopLink" placeholder="输入桌面端链接" />
       <el-input v-model="mobileLink" placeholder="输入移动端链接" />
-      <el-button type="primary" :loading="loading" @click="gerenatePreview">生成预览图</el-button>
+      <el-switch v-model="showBangs" active-text="显示刘海" />
+      <el-button type="primary" :loading="loading" @click="generatePreview">生成预览图</el-button>
     </div>
     <div class="apple-devices-preview">
       <div class="desktop">
         <iframe :src="desktopLink" scrolling="no" />
+        <div class="image-preview d-none" />
       </div>
       <div class="tablet">
         <iframe :src="tabletLink" scrolling="no" />
+        <div class="image-preview d-none" />
       </div>
       <div class="mobile">
         <iframe :src="mobileLink" scrolling="no" />
+        <div class="image-preview d-none" />
       </div>
+      <div v-show="showBangs" class="mobile-mask" />
     </div>
   </div>
 </template>
@@ -29,6 +34,7 @@ export default {
       desktopLink: 'https://pre.fixit.lruihao.cn/',
       mobileLink: 'https://pre.fixit.lruihao.cn/',
       loading: false,
+      showBangs: false,
     }
   },
   computed: {
@@ -37,7 +43,43 @@ export default {
     },
   },
   methods: {
-    gerenatePreview() {
+    getIframeImage() {
+      const iframeHtml = document.querySelector('iframe')
+      const iframeBody = iframeHtml.document.getElementsByTagName('body')[0]
+      domtoimagemore.toPng(iframeBody, {
+        width: iframeBody.scrollWidth,
+        height: iframeBody.scrollHeight,
+      }).then((dataUrl) => {
+        const image = new Image()
+        image.src = dataUrl
+        image.onload = () => {
+          const canvas = document.createElement('canvas')
+          canvas.width = image.width
+          canvas.height = image.height
+          const ctx = canvas.getContext('2d')
+          ctx.drawImage(image, 0, 0)
+          const imageData = ctx.getImageData(0, 0, image.width, image.height)
+          const data = imageData.data
+          for (let i = 0; i < data.length; i += 4) {
+            const r = data[i]
+            const g = data[i + 1]
+            const b = data[i + 2]
+            const a = data[i + 3]
+            if (r === 255 && g === 255 && b === 255 && a === 255) {
+              data[i + 3] = 0
+            }
+          }
+          ctx.putImageData(imageData, 0, 0)
+          const dataUrl = canvas.toDataURL('image/png')
+          this.$refs.iframe.classList.add('d-none')
+          this.$refs.iframe.nextElementSibling.classList.remove('d-none')
+          this.$refs.iframe.nextElementSibling.style.backgroundImage = `url(${dataUrl})`
+          this.$refs.iframe.nextElementSibling.style.backgroundColor = '#fff'
+        }
+      })
+
+    },
+    generatePreview() {
       // this.loading = true
       // domtoimagemore.toPng(document.querySelector('.apple-devices-preview'), {
       //   copyDefaultStyles: false,
@@ -72,13 +114,17 @@ export default {
     width: 350px;
   }
 }
+.d-none {
+  display: none !important;
+}
 .apple-devices-preview {
   width: max-content;
   margin: auto;
   position: relative;
   overflow: hidden;
 
-  iframe {
+  iframe,
+  .image-preview {
     border: none;
     position: absolute;
     overflow-y: hidden;
@@ -87,6 +133,11 @@ export default {
     margin: 0;
     padding: 0;
   }
+  .image-preview {
+    background: none;
+    outline: none;
+    overflow: hidden;
+  }
   .desktop {
     width: 1000px;
     height: 575px;
@@ -94,7 +145,7 @@ export default {
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 1;
-
+    .image-preview,
     iframe {
       top: 4%;
       left: 11%;
@@ -114,6 +165,7 @@ export default {
     bottom: 0;
     right: 0;
     z-index: 2;
+    .image-preview,
     iframe {
       top: 16px;
       left: 16px;
@@ -123,8 +175,9 @@ export default {
       transform: scale(0.337);
     }
   }
-  .mobile {
-    background-image: url(@/assets/images/apple-devices/iphone14pro.png);
+  .mobile,
+  .mobile-mask {
+    background-image: url(@/assets/images/apple-devices/iphone15pro.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -133,15 +186,23 @@ export default {
     position: absolute;
     bottom: 0;
     right: 220px;
+    outline: none;
+    overflow: hidden;
+  }
+  .mobile {
     z-index: 3;
+    .image-preview,
     iframe {
-      top: 9px;
-      left: 10px;
-      width: calc(142.85% - 20px / 0.7);
-      height: calc(142.85% - 20px / 0.7);
-      border-radius: 30px;
+      top: 8.6px;
+      left: 11.76px;
+      width: calc(143.85% - 24.38px / 0.7);
+      height: calc(143.85% - 20.38px / 0.7);
+      border-radius: 34px;
       transform: scale(0.7);
     }
+  }
+  .mobile-mask {
+    z-index: 4;
   }
 }
 </style>
