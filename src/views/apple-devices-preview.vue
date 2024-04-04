@@ -1,11 +1,14 @@
 <!-- 网站预览图生成 -->
 <template>
   <div>
-    <div class="page-header">
+    <div v-if="!isPreview" class="page-header">
       <el-input v-model="desktopLink" placeholder="输入桌面端链接" />
       <el-input v-model="mobileLink" placeholder="输入移动端链接" />
       <el-switch v-model="showBangs" active-text="显示刘海" />
-      <el-button type="primary" :loading="loading" @click="generatePreview">生成预览图</el-button>
+      <el-button-group>
+        <el-button type="primary" size="medium" @click="preview">预览</el-button>
+        <el-button type="primary" size="medium" :loading="loading" @click="generatePreview">下载</el-button>
+      </el-button-group>
     </div>
     <div class="apple-devices-preview">
       <div class="desktop">
@@ -35,11 +38,18 @@ export default {
       mobileLink: 'https://pre.fixit.lruihao.cn/',
       loading: false,
       showBangs: false,
+      isPreview: false,
     }
   },
   computed: {
     tabletLink() {
       return this.desktopLink
+    },
+  },
+  watch: {
+    isPreview(val) {
+      const headerContainer = document.querySelector('.header-container')
+      headerContainer.style.display = val ? 'none' : 'flex'
     },
   },
   methods: {
@@ -79,8 +89,21 @@ export default {
       })
 
     },
+    preview() {
+      this.isPreview = true
+      this.$message({
+        message: '预览 15 秒后自动退出，你可以使用截图工具保存图片！',
+        type: 'info',
+        showClose: true,
+        duration: 2000,
+      })
+      setTimeout(() => {
+        this.isPreview = false
+      }, 15000)
+    },
     generatePreview() {
       // this.loading = true
+      // this.preview()
       // domtoimagemore.toPng(document.querySelector('.apple-devices-preview'), {
       //   copyDefaultStyles: false,
       //   style: {
@@ -94,8 +117,9 @@ export default {
       //   this.loading = false
       // })
       this.$message({
-        message: '骚瑞，暂不支持生成图片，请手动截图！',
+        message: '骚瑞，暂不支持生成图片，请点击预览后手动截图！',
         type: 'warning',
+        showClose: true,
       })
     },
   },
@@ -103,6 +127,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 .page-header {
   height: 50px;
   display: flex;
