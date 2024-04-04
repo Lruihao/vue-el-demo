@@ -1,11 +1,12 @@
 <!-- 网站预览图生成 -->
 <template>
-  <div>
+  <div :style="{ backgroundColor: pageBackgroundColor }">
     <div v-if="!isPreview" class="page-header">
       <el-input v-model="desktopLink" placeholder="输入桌面端链接" />
       <el-input v-model="mobileLink" placeholder="输入移动端链接" />
+      <el-color-picker v-model="pageBackgroundColor" :predefine="predefineColors" />
       <el-switch v-model="showBangs" active-text="显示刘海" />
-      <el-button-group>
+      <el-button-group style="margin-left: 1rem;">
         <el-button type="primary" size="medium" @click="preview">预览</el-button>
         <el-button type="primary" size="medium" :loading="loading" @click="generatePreview">下载</el-button>
       </el-button-group>
@@ -20,7 +21,7 @@
         <div class="image-preview d-none" />
       </div>
       <div class="mobile">
-        <iframe :src="mobileLink" scrolling="no" />
+        <iframe :src="mobileLink || desktopLink" scrolling="no" />
         <div class="image-preview d-none" />
       </div>
       <div v-show="showBangs" class="mobile-mask" />
@@ -34,11 +35,24 @@ export default {
   name: 'AppleDevicesPreview',
   data() {
     return {
-      desktopLink: 'https://pre.fixit.lruihao.cn/',
-      mobileLink: 'https://pre.fixit.lruihao.cn/',
+      desktopLink: 'https://fixit.lruihao.cn/',
+      mobileLink: 'https://lruihao.cn/',
       loading: false,
       showBangs: false,
       isPreview: false,
+      pageBackgroundColor: '#fff',
+      predefineColors: [
+        '#fff',
+        '#000',
+        '#ffe9e3',
+        '#dcd6f7',
+        '#B1B3E4',
+        '#81d795',
+        '#7ac5cd',
+        '#f6e58d',
+        '#ffbe76',
+        '#ff8e8e',
+      ],
     }
   },
   computed: {
@@ -51,6 +65,14 @@ export default {
       const headerContainer = document.querySelector('.header-container')
       headerContainer.style.display = val ? 'none' : 'flex'
     },
+  },
+  mounted() {
+    // 监听键盘事件 Esc 退出预览
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        this.isPreview = false
+      }
+    })
   },
   methods: {
     getIframeImage() {
@@ -92,7 +114,7 @@ export default {
     preview() {
       this.isPreview = true
       this.$message({
-        message: '预览 15 秒后自动退出，你可以使用截图工具保存图片！',
+        message: '预览 15 秒后自动退出或按 ESC 键退出，你可以使用截图工具保存图片！',
         type: 'info',
         showClose: true,
         duration: 2000,
@@ -142,7 +164,7 @@ export default {
   gap: 0.5rem;
   margin-block: 1rem;
   .el-input {
-    width: 350px;
+    width: 300px;
   }
 }
 .d-none {
