@@ -220,12 +220,12 @@ export default {
     z-index: 2;
     .image-preview,
     iframe {
-      top: 16px;
+      top: 17px;
       left: 16px;
-      border-radius: 20px;
-      width: calc((100% - 33px) / 0.337);
-      height: calc((100% - 33px) / 0.337);
-      transform: scale(0.337);
+      border-radius: 16px;
+      width: calc(296.73591% - 96.82285px);
+      height: calc(296.73591% - 96.82285px);
+      transform: scale(.337);
     }
   }
   .mobile,
@@ -247,10 +247,10 @@ export default {
     .image-preview,
     iframe {
       top: 8.6px;
-      left: 11.76px;
-      width: calc(143.85% - 24.38px / 0.7);
-      height: calc(143.85% - 20.38px / 0.7);
-      border-radius: 34px;
+      left: 11.74px;
+      width: calc(143.85% - 34.72857px);
+      height: calc(143.85% - 29.11429px);
+      border-radius: 32px;
       transform: scale(0.7);
     }
   }
