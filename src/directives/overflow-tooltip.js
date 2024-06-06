@@ -38,8 +38,28 @@ const setTooltip = (el, binding) => {
   el.onmousemove = function(e) {
     if (!isEllipsis) { return }
     const vcTooltipDom = document.getElementById('vc-tooltip')
-    vcTooltipDom.style.top = e.clientY + 15 + 'px'
-    vcTooltipDom.style.left = e.clientX + 15 + 'px'
+    const padding = 5
+    let offsetX = e.clientX + 15
+    let offsetY = e.clientY + 15
+    // 判断是否超出视窗边界（横向）
+    if (offsetX + vcTooltipDom.offsetWidth > document.documentElement.clientWidth) {
+      offsetX = document.documentElement.clientWidth - vcTooltipDom.offsetWidth - padding
+    }
+    if (offsetX <= 0) {
+      offsetX = padding
+      vcTooltipDom.style.width = document.documentElement.clientWidth - padding * 2 + 'px'
+    }
+    // 判断是否超出视窗边界（纵向）
+    if (offsetY + vcTooltipDom.offsetHeight > document.documentElement.clientHeight) {
+      offsetY = document.documentElement.clientHeight - vcTooltipDom.offsetHeight - padding
+    }
+    if (offsetY <= 0) {
+      offsetY = padding
+      vcTooltipDom.style.height = document.documentElement.clientHeight - padding * 2 + 'px'
+    }
+    vcTooltipDom.style.left = offsetX + 'px'
+    vcTooltipDom.style.top = offsetY + 'px'
+    // 注：当浮层元素和窗口大小差不多时，浮层会覆盖原本的内容，导致浮层闪一下就不见了
   }
   // 鼠标移出时将浮层元素销毁
   el.onmouseleave = function() {
