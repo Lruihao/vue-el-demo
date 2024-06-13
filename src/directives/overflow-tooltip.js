@@ -34,7 +34,7 @@ const setTooltip = (el, binding) => {
     // 浮层中的文字 通过属性值传递动态的显示文案
     document.getElementById('vc-tooltip').innerHTML = binding.value
   }
-  // 鼠标移动时，动态修改浮沉的位置属性
+  // 鼠标移动时，动态修改浮层的位置属性
   el.onmousemove = function(e) {
     if (!isEllipsis) { return }
     const vcTooltipDom = document.getElementById('vc-tooltip')

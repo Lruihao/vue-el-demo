@@ -24,6 +24,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "appleDevicesPreview" */ '@/views/apple-devices-preview'),
   },
   {
+    path: '/aside-toggle-drag',
+    name: 'asideToggleDrag',
+    meta: { description: '侧栏折叠和托拽组件' },
+    component: () => import(/* webpackChunkName: "asideToggleDrag" */ '@/views/aside-toggle-drag'),
+  },
+  {
     path: '/card-collapse',
     name: 'cardCollapse',
     meta: { description: '可折叠的 el-card' },
