@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue_el_demo"]=self["webpackChunkvue_el_demo"]||[]).push([[578],{20732:function(s,c,e){e.r(c),e.d(c,{default:function(){return r}});var l=function(){var s=this,c=s._self._c;return c("div",[c("h2",[s._v("Svg Icon")]),c("SvgIcon",{staticClass:"custom-class",attrs:{"icon-class":"fullscreen"}}),c("SvgIcon",{staticClass:"custom-class",attrs:{"icon-class":"exit-fullscreen"}})],1)},n=[],t={name:"IconsView"},u=t,a=e(1001),o=(0,a.Z)(u,l,n,!1,null,null,null),r=o.exports}}]);
+//# sourceMappingURL=icons.53ae1063.js.map
