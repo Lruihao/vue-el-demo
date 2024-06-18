@@ -25,7 +25,7 @@
  * 设置 dragElementClass 为【父组件】中可拖动的元素的 class，然后在【父组件】引入该组件即可
  * @example
  * <el-aside v-show="!isCollapse" class="drag-element"> ... </el-aside>
- * <aside-toggler :is-collapse="isCollapse" drag-element-class="drag-element" />
+ * <aside-toggler :is-collapse.sync="isCollapse" drag-element-class="drag-element" />
  */
 export default {
   name: 'AsideToggler',

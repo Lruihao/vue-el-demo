@@ -72,6 +72,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "icons" */ '@/views/icons'),
   },
   {
+    path: '/loading-indicator',
+    name: 'loadingIndicator',
+    meta: { description: 'CSS 实现 Postman loading 效果' },
+    component: () => import(/* webpackChunkName: "loadingIndicator" */ '@/views/loading-indicator'),
+  },
+  {
     path: '/minder-editor',
     name: 'minderEditor',
     meta: { description: '脑图编辑器 demo' },
