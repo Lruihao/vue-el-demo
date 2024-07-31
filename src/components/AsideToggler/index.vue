@@ -4,7 +4,7 @@
     :data-position="position"
     @mousedown="dragEvent"
   >
-    <div v-if="!isCollapse && dragElement !== null" class="resize-bar" />
+    <div v-if="!isCollapse && dragElement" class="resize-bar" />
     <el-tooltip
       v-if="tooltipVisible"
       effect="dark"
@@ -66,7 +66,7 @@ export default {
   data() {
     return {
       tooltipVisible: true,
-      dragElement: null
+      dragElement: void 0,
     }
   },
   computed: {
