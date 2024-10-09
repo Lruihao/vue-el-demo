@@ -10,6 +10,10 @@ import vueMinderEditor from 'vue-minder-editor-extended'
 import ElCardCollapse from '@/components/ElCardCollapse.vue'
 import Clickoutside from 'element-ui/src/utils/clickoutside'
 import overflowTooltip from '@/directives/overflow-tooltip'
+import VxeUI from 'vxe-pc-ui'
+import 'vxe-pc-ui/lib/style.css'
+import VxeUITable from 'vxe-table'
+import 'vxe-table/lib/style.css'
 
 // register svg component globally
 Vue.component('SvgIcon', SvgIcon)
@@ -35,6 +39,8 @@ Vue.directive('focus', {
 })
 // v-overflow-tooltip 指令，用于元素内容溢出时显示 tooltip
 Vue.use(overflowTooltip)
+Vue.use(VxeUI)
+Vue.use(VxeUITable)
 
 new Vue({
   router,

@@ -113,6 +113,12 @@ const routes = [
     meta: { description: 'v-sticky-footer 表尾合计行' },
     component: () => import(/* webpackChunkName: "stickySum" */ '@/views/sticky-sum'),
   },
+  {
+    path: '/vxe-table',
+    name: 'vxeTable',
+    meta: { description: 'vxe-table' },
+    component: () => import(/* webpackChunkName: "vxeTable" */ '@/views/vxe-table'),
+  },
 ]
 
 const router = new VueRouter({

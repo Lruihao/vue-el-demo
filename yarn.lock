@@ -2130,6 +2130,14 @@
   "resolved" "https://registry.npmjs.org/@vue/web-component-wrapper/-/web-component-wrapper-1.3.0.tgz"
   "version" "1.3.0"
 
+"@vxe-ui/core@^3.0.11":
+  "integrity" "sha512-PHNMQEvZdkSOAk/voe6NyRw+eCupCtzban71Xm2frDutucNwKiAPtCN+vSjz8zQ35yVfChG7Ne3FBgmX4nyGgA=="
+  "resolved" "https://registry.npmjs.org/@vxe-ui/core/-/core-3.0.11.tgz"
+  "version" "3.0.11"
+  dependencies:
+    "dom-zindex" "^1.0.6"
+    "xe-utils" "^3.5.31"
+
 "@webassemblyjs/ast@^1.11.5", "@webassemblyjs/ast@1.11.6":
   "integrity" "sha512-IN1xI7PwOvLPgjcf180gC1bqn3q/QaOCwYUahIOhbYUu8KA/3tw2RT/T0Gidi1l7Hhj5D/INhJxiICObqpMu4Q=="
   "resolved" "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.11.6.tgz"
@@ -3702,6 +3710,11 @@
   "integrity" "sha512-Dt0QdaHmLpjURjU7Tnu3AgYSF2LuOmksSGsUcE6ItvJoCWTBEmiMXcqBdNSAm9+QbbwD7JMoVsuuKX6ZVQv1qA=="
   "resolved" "https://registry.npmjs.org/dom-to-image/-/dom-to-image-2.6.0.tgz"
   "version" "2.6.0"
+
+"dom-zindex@^1.0.6":
+  "integrity" "sha512-FKWIhiU96bi3xpP9ewRMgANsoVmMUBnMnmpCT6dPMZOunVYJQmJhSRruoI0XSPoHeIif3kyEuiHbFrOJwEJaEA=="
+  "resolved" "https://registry.npmjs.org/dom-zindex/-/dom-zindex-1.0.6.tgz"
+  "version" "1.0.6"
 
 "domelementtype@^1.3.1", "domelementtype@1":
   "integrity" "sha512-BSKB+TSpMpFI/HOxCNr1O8aMOTZ8hT3pM3GQ0w/mWRmkhEDSFJkkyzz4XQsBV44BChwGkrDfMyjVD0eA2aFV3w=="
@@ -8486,6 +8499,20 @@
   "resolved" "https://registry.npmjs.org/vuex/-/vuex-3.6.2.tgz"
   "version" "3.6.2"
 
+"vxe-pc-ui@^3.1.24":
+  "integrity" "sha512-vxon4AzknXG12+kbMo+EIKx2wibGXXhx7weuYlvWotaFeS1LMaEcvFD7UubJ2bp4uKKMqmDjrMwSb3alkZqy1A=="
+  "resolved" "https://registry.npmjs.org/vxe-pc-ui/-/vxe-pc-ui-3.1.25.tgz"
+  "version" "3.1.25"
+  dependencies:
+    "@vxe-ui/core" "^3.0.11"
+
+"vxe-table@^3.9.0":
+  "integrity" "sha512-yOAULmsTeAsV0F4Hsz0CgOABXX8aTdVdCxB2Bj8/QXNOYcUCLytf/9kffgLZdmRbVh0Chq5K7o2RMvJDGQk0XA=="
+  "resolved" "https://registry.npmjs.org/vxe-table/-/vxe-table-3.9.0.tgz"
+  "version" "3.9.0"
+  dependencies:
+    "vxe-pc-ui" "^3.1.24"
+
 "watchpack@^2.4.0":
   "integrity" "sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg=="
   "resolved" "https://registry.npmjs.org/watchpack/-/watchpack-2.4.0.tgz"
@@ -8759,6 +8786,11 @@
   "integrity" "sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ=="
   "resolved" "https://registry.npmjs.org/ws/-/ws-8.16.0.tgz"
   "version" "8.16.0"
+
+"xe-utils@^3.5.31":
+  "integrity" "sha512-oS4yv8qktvlE0wc9yYkitDidEmThc5qN0UTRvKCvrWnejxbTyIxbwfrdZmPKdKGZtB+/U8cEAMFywLJjHtD11A=="
+  "resolved" "https://registry.npmjs.org/xe-utils/-/xe-utils-3.5.31.tgz"
+  "version" "3.5.31"
 
 "y18n@^5.0.5":
   "integrity" "sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA=="
