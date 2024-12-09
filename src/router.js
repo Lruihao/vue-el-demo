@@ -114,6 +114,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "stickySum" */ '@/views/sticky-sum'),
   },
   {
+    path: '/translate-js',
+    name: 'translateJs',
+    meta: { description: '测试在 Vue 中使用 translate.js' },
+    component: () => import(/* webpackChunkName: "translateJs" */ '@/views/translate-js'),
+  },
+  {
     path: '/vxe-table',
     name: 'vxeTable',
     meta: { description: 'vxe-table' },
