@@ -119,6 +119,12 @@ const routes = [
     meta: { description: 'vxe-table' },
     component: () => import(/* webpackChunkName: "vxeTable" */ '@/views/vxe-table'),
   },
+  {
+    path: '/vxe-table2',
+    name: 'vxeTable2',
+    meta: { description: 'vxe-table custom col' },
+    component: () => import(/* webpackChunkName: "vxeTable2" */ '@/views/vxe-table2'),
+  },
 ]
 
 const router = new VueRouter({

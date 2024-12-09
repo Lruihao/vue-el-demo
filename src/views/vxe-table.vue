@@ -25,11 +25,15 @@
       :scroll-y="{enabled: true, gt: 20}"
       :edit-config="{trigger: 'dblclick', mode: 'cell', showStatus: true, icon: 'el-icon-edit'}"
     >
-      <vxe-table-column type="checkbox" width="60" />
-      <vxe-table-column type="seq" width="60" />
-      <vxe-table-column field="name" title="Name" :edit-render="{name: 'input'}" />
-      <vxe-table-column field="sex" title="Sex" :edit-render="{name: '$select', options: sexList}" />
-      <vxe-table-column field="address" title="Address" :edit-render="{name: 'input'}" />
+      <vxe-column type="checkbox" width="60" />
+      <vxe-column type="seq" width="60" />
+      <vxe-column field="name" title="Name" :edit-render="{name: 'input'}">
+        <template slot-scope="{ row }">
+          <span>custom: {{ row.name }}</span>
+        </template>
+      </vxe-column>
+      <vxe-column field="sex" title="Sex" :edit-render="{name: '$select', options: sexList}" />
+      <vxe-column field="address" title="Address" :edit-render="{name: 'input'}" />
     </vxe-table>
   </div>
 </template>
