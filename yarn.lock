@@ -4913,10 +4913,10 @@ human-signals@^2.1.0:
   resolved "https://registry.npmjs.org/human-signals/-/human-signals-2.1.0.tgz"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
-i18n-jsautotranslate@^3.11.11:
-  version "3.11.11"
-  resolved "https://registry.npmjs.org/i18n-jsautotranslate/-/i18n-jsautotranslate-3.11.11.tgz#b71f2541dabe19a4885d319eb8823de03f575403"
-  integrity sha512-zVl6Zd3XgtZ/LhSpRPOjVMd+sg9K+7guZcXRBpmeQTVhHFdTbOSX57O82gUJOrVuI0H17wzMOrhLDmzfsNSvTA==
+i18n-jsautotranslate@^3.12.0:
+  version "3.12.0"
+  resolved "https://registry.npmjs.org/i18n-jsautotranslate/-/i18n-jsautotranslate-3.12.0.tgz#a673e1a18c8fb5551b57260de4445cc1a7f93150"
+  integrity sha512-lOTnrxFv3LejzKYOlthuxAUcnfr14drQRsYLuB4WD5dA2/SHPLujv113gj1Ke+O4BpTl+88IR/v7/bXAiZk8Yg==
 
 iconv-lite@0.4.24:
   version "0.4.24"
