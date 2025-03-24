@@ -71,10 +71,13 @@ const setTooltip = (el, binding) => {
   }
 }
 
+let currentBinding = null
+
 const plugin = {
   install(Vue) {
     Vue.directive('overflow-tooltip', {
       inserted: (el, binding) => {
+        currentBinding = binding
         // 设置元素样式
         Object.assign(el.style, {
           overflow: 'hidden',
@@ -84,19 +87,20 @@ const plugin = {
         // 监控元素可见性变化
         const observer = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
-            setTooltip(el, binding)
+            setTooltip(el, currentBinding)
           }
         })
         observer.observe(el)
         // 监控元素宽度变化
         const resizeObserver = new ResizeObserver(() => {
-          setTooltip(el, binding)
+          setTooltip(el, currentBinding)
         })
         resizeObserver.observe(el)
         // 设置浮层内容
         setTooltip(el, binding)
       },
       update: (el, binding) => {
+        currentBinding = binding
         // 更新浮层内容
         setTooltip(el, binding)
       },
