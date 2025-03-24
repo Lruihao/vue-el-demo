@@ -38,6 +38,7 @@ const setTooltip = (el, binding) => {
   el.onmousemove = function(e) {
     if (!isEllipsis) { return }
     const vcTooltipDom = document.getElementById('vc-tooltip')
+    if (!vcTooltipDom) { return }
     const padding = 5
     let offsetX = e.clientX + 15
     let offsetY = e.clientY + 15
