@@ -15,18 +15,6 @@ const setTooltip = (el, binding) => {
     if (!isEllipsis) { return }
     // 创建浮层元素并设置样式
     const vcTooltipDom = document.createElement('div')
-    Object.assign(vcTooltipDom.style, {
-      position: 'absolute',
-      background: '#303133',
-      color: '#fff',
-      fontSize: '12px',
-      zIndex: '6000',
-      padding: '10px',
-      borderRadius: '4px',
-      lineHeight: 1.2,
-      minHeight: '10px',
-      wordWrap: 'break-word',
-    })
     // 设置 id 方便寻找
     vcTooltipDom.setAttribute('id', 'vc-tooltip')
     // 将浮层插入到 body 中
@@ -71,11 +59,47 @@ const setTooltip = (el, binding) => {
   }
 }
 
+const insertStyle = () => {
+  if (document.getElementById('vc-tooltip-style')) { return }
+  const style = document.createElement('style')
+  style.id = 'vc-tooltip-style'
+  style.innerHTML = `
+    :root {
+      --vc-tooltip-bg: #303133;
+      --vc-tooltip-color: #fff;
+    }
+    #vc-tooltip {
+      position: absolute;
+      background: var(--vc-tooltip-bg);
+      color: var(--vc-tooltip-color);
+      font-size: 12px;
+      z-index: 6000;
+      padding: 10px;
+      border-radius: 4px;
+      line-height: 1.2;
+      min-height: 10px;
+      word-wrap: break-word;
+    }
+    #vc-tooltip::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border-bottom-color: var(--vc-tooltip-bg);
+      left: 0;
+      bottom: 100%;
+      margin-left: 15px;
+    }
+  `.replace(/\s+/g, ' ').trim()
+  document.head.appendChild(style)
+}
+
 const plugin = {
   install(Vue) {
     Vue.directive('overflow-tooltip', {
       inserted: (el, binding) => {
-        el.currentBinding = binding
+        el.binding = binding
         // 设置元素样式
         Object.assign(el.style, {
           overflow: 'hidden',
@@ -85,20 +109,22 @@ const plugin = {
         // 监控元素可见性变化
         const observer = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
-            setTooltip(el, el.currentBinding)
+            setTooltip(el, el.binding)
           }
         })
         observer.observe(el)
         // 监控元素宽度变化
         const resizeObserver = new ResizeObserver(() => {
-          setTooltip(el, el.currentBinding)
+          setTooltip(el, el.binding)
         })
         resizeObserver.observe(el)
+        // 插入样式
+        insertStyle()
         // 设置浮层内容
         setTooltip(el, binding)
       },
       update: (el, binding) => {
-        el.currentBinding = binding
+        el.binding = binding
         // 更新浮层内容
         setTooltip(el, binding)
       },
