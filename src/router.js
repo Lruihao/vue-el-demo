@@ -30,6 +30,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "asideToggleDrag" */ '@/views/aside-toggle-drag'),
   },
   {
+    path: '/caniuse-embed-element',
+    name: 'caniuseEmbedElement',
+    meta: { description: '<caniuse-embed> element Vue2 demo' },
+    component: () => import(/* webpackChunkName: "caniuseEmbedElement" */ '@/views/caniuse-embed-element'),
+  },
+  {
     path: '/card-collapse',
     name: 'cardCollapse',
     meta: { description: '可折叠的 el-card' },
