@@ -1,6 +1,7 @@
 {
   "name": "vue-el-demo",
   "version": "0.1.0",
+  "type": "module",
   "description": "Vue and element-ui related demos.",
   "keywords": [
     "vue",
@@ -16,11 +17,12 @@
     "url": "git+https://github.com/Lruihao/vue-el-demo.git"
   },
   "author": "Lruihao (https://lruihao.cn)",
+  "license": "MIT",
   "scripts": {
-    "build": "npm run gr && vue-cli-service build",
+    "build": "npm run gr && rsbuild build",
     "gr": "node gen-router.js",
-    "lint": "vue-cli-service lint",
-    "serve": "npm run gr && vue-cli-service serve"
+    "dev": "npm run gr && rsbuild dev",
+    "preview": "rsbuild preview"
   },
   "dependencies": {
     "@antv/g2plot": "^2.4.31",
@@ -35,6 +37,7 @@
     "driver.js": "^1.2.1",
     "element-ui": "^2.15.13",
     "i18n-jsautotranslate": "^3.12.0",
+    "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "v-code-diff": "^1.9.0",
     "vue": "^2.6.14",
@@ -46,25 +49,16 @@
     "vxe-table": "^3.9.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@babel/plugin-transform-private-methods": "^7.22.5",
-    "@babel/runtime": "^7.13.0",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "lint-staged": "^11.1.2",
-    "sass": "^1.32.7",
-    "sass-loader": "^12.0.0",
+    "@babel/plugin-syntax-jsx": "^7.27.1",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/runtime": "^7.28.2",
+    "@rsbuild/core": "^1.4.15",
+    "@rsbuild/plugin-babel": "^1.0.6",
+    "@rsbuild/plugin-sass": "^1.3.5",
+    "@rsbuild/plugin-vue2": "^1.0.4",
+    "@rsbuild/plugin-vue2-jsx": "^1.0.4",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.4.0",
     "svg-sprite-loader": "^6.0.11",
-    "svgo-loader": "^4.0.0",
-    "vue-template-compiler": "^2.6.14",
-    "webpack": "^5.0.0"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+    "svgo-loader": "^4.0.0"
   }
 }

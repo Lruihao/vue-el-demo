@@ -1,5 +1,5 @@
-const fs = require('fs')
-const os = require('os')
+import fs from 'fs'
+import os from 'os'
 
 const vueDir = './src/views/'
 const routerFile = './src/router.js'

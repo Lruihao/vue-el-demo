@@ -1,8 +1,15 @@
-module.exports = {
+export default {
   presets: [
-    '@vue/cli-plugin-babel/preset',
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          browsers: ['> 1%', 'last 2 versions', 'not ie <= 8']
+        }
+      }
+    ]
   ],
   plugins: [
-    '@babel/plugin-transform-private-methods',
+    '@babel/plugin-syntax-jsx',
   ],
 }

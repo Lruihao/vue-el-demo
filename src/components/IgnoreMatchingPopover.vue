@@ -4,13 +4,15 @@
     width="300"
     trigger="click"
   >
-    <el-button
-      slot="reference"
-      type="text"
-      size="small"
-    >
-      <SvgIcon icon-class="filter" />
-    </el-button>
+    <template #reference>
+      <el-button
+      
+        type="text"
+        size="small"
+      >
+        <SvgIcon icon-class="filter" />
+      </el-button>
+    </template>
     <el-form class="ignore-keywords-form" :model="form" label-position="top" size="mini">
       <el-form-item label="启用忽略" class="form-item-inline">
         <el-switch v-model="form.ignoreEnabled" />

@@ -17,7 +17,7 @@
         label="描述"
         show-overflow-tooltip
       >
-        <template slot-scope="{ row }">
+        <template #default="{ row }">
           <el-tooltip effect="dark" content="查看源码" placement="top">
             <el-link
               icon="el-icon-view"

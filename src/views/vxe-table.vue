@@ -28,7 +28,7 @@
       <vxe-column type="checkbox" width="60" />
       <vxe-column type="seq" width="60" />
       <vxe-column field="name" title="Name" :edit-render="{name: 'input'}">
-        <template slot-scope="{ row }">
+        <template #default="{ row }">
           <span>custom: {{ row.name }}</span>
         </template>
       </vxe-column>

@@ -51,7 +51,7 @@
         label="操作"
         width="100"
       >
-        <template slot-scope="scope">
+        <template #default="scope">
           <el-button type="text" size="small" @click="handleClick(scope.row)">
             查看
           </el-button>

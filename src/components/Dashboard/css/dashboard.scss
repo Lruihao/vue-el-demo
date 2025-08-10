@@ -1,4 +1,6 @@
 /* dashboard 相关样式 */
+@use "sass:color";
+
 $dashboard-border-color: #e6e6e6 !default;
 $dashboard-box-shadow-color: rgba(0, 0, 0, 0.1) !default;
 $dashboard-sidebar-bg: #fafbfc !default;
@@ -60,7 +62,7 @@ $dashboard-placeholder-bg: #fec171 !default;
       position: sticky;
       top: 0;
       z-index: 1;
-      background-color: darken($dashboard-sidebar-bg, 1%);
+      background-color: color.adjust($dashboard-sidebar-bg, $lightness: -1%);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -90,7 +92,7 @@ $dashboard-placeholder-bg: #fec171 !default;
       width: auto;
       overflow-y: auto;
       padding-block: 6px;
-      background-color: darken($dashboard-sidebar-bg, 1%);
+      background-color: color.adjust($dashboard-sidebar-bg, $lightness: -1%);
 
       .el-menu-item {
         padding: 0 10px !important;
@@ -114,7 +116,7 @@ $dashboard-placeholder-bg: #fec171 !default;
         }
 
         &:hover span {
-          background-color: darken($dashboard-sidebar-bg, 4%);
+          background-color: color.adjust($dashboard-sidebar-bg, $lightness: -4%);
         }
 
         &.is-active {
@@ -139,7 +141,7 @@ $dashboard-placeholder-bg: #fec171 !default;
       .dashboard-widget {
         margin: 8px 0;
         cursor: move;
-        background-color: darken($dashboard-sidebar-bg, 3%);
+        background-color: color.adjust($dashboard-sidebar-bg, $lightness: -3%);
         border-radius: 4px;
         width: 200px;
         height: 60px;
