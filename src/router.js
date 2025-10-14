@@ -78,6 +78,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "icons" */ '@/views/icons'),
   },
   {
+    path: '/json-viewer-element',
+    name: 'jsonViewerElement',
+    meta: { description: '<json-viewer> element Vue2 demo' },
+    component: () => import(/* webpackChunkName: "jsonViewerElement" */ '@/views/json-viewer-element'),
+  },
+  {
     path: '/loading-indicator',
     name: 'loadingIndicator',
     meta: { description: 'CSS 实现 Postman loading 效果' },

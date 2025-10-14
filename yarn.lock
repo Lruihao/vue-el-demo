@@ -3664,6 +3664,11 @@ json-schema-traverse@^1.0.0:
   resolved "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz#ae7bcb3656ab77a73ba5c49bf654f38e6b6860e2"
   integrity sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==
 
+json-viewer-element@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/json-viewer-element/-/json-viewer-element-1.0.0.tgz#6caa0dd1daaf32eecc0654acdd3866ca06de31d4"
+  integrity sha512-i+5xokAiJRnwG6iHd4oHCZhlXfdrI9dHB+QqkJZGZQRATmULwX7xUAwbxSZtHkMThIaaDy9lxToDzpwfszzM9Q==
+
 json2module@^0.0.3:
   version "0.0.3"
   resolved "https://registry.npmjs.org/json2module/-/json2module-0.0.3.tgz#00fb5f4a9b7adfc3f0647c29cb17bcd1979be9b2"
