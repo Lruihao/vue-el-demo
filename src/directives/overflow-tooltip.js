@@ -20,7 +20,7 @@ const setTooltip = (el, binding) => {
     // 将浮层插入到 body 中
     document.body.appendChild(vcTooltipDom)
     // 浮层中的文字 通过属性值传递动态的显示文案
-    document.getElementById('vc-tooltip').innerHTML = binding.value
+    document.getElementById('vc-tooltip').innerText = binding.value
   }
   // 鼠标移动时，动态修改浮层的位置属性
   el.onmousemove = function(e) {
