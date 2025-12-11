@@ -63,7 +63,7 @@ const insertStyle = () => {
   if (document.getElementById('vc-tooltip-style')) { return }
   const style = document.createElement('style')
   style.id = 'vc-tooltip-style'
-  style.innerHTML = `
+  style.innerText = `
     :root {
       --vc-tooltip-bg: #303133;
       --vc-tooltip-color: #fff;
