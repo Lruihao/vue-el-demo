@@ -8,6 +8,8 @@
       来展示 Can I Use 的数据。
     </p>
     <caniuse-embed feature="custom-elementsv1" />
+
+    <caniuse-embed feature="css-grid" baseline style="margin-top: 1em;" />
   </div>
 </template>
 

@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@antv/g2plot": "^2.4.31",
-    "@cell-x/caniuse-embed-element": "^1.0.3",
+    "@cell-x/caniuse-embed-element": "^1.2.0",
     "@cell-x/el-table-sticky": "^1.0.3",
     "@interactjs/core": "1.10.2",
     "@interactjs/utils": "1.10.2",

@@ -1064,10 +1064,10 @@
   resolved "https://registry.npmjs.org/@bufbuild/protobuf/-/protobuf-2.6.3.tgz#291dcd1cdfae453a16b40e0b50961e2a444f6d3c"
   integrity sha512-w/gJKME9mYN7ZoUAmSMAWXk4hkVpxRKvEJCb3dV5g9wwWdxTJJ0ayOJAVcNxtdqaxDyFuC0uz4RSGVacJ030PQ==
 
-"@cell-x/caniuse-embed-element@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/@cell-x/caniuse-embed-element/-/caniuse-embed-element-1.0.3.tgz#c08eb97af0b810a1c8cab3b67320e41eb9aeb459"
-  integrity sha512-FZnemue6KVNRTiZ8NnLDBWkRaXiFADo75OeHiJFZVJxtR2/7UQFzooySiX5xFPSeTxuj3fPu9QE/7UQXS6XpJg==
+"@cell-x/caniuse-embed-element@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/@cell-x/caniuse-embed-element/-/caniuse-embed-element-1.2.0.tgz#baa56fe949192c77058f876e678f0af39388edff"
+  integrity sha512-PCKfNfW1XOVOuWfFVpoeeNpev+J9miUAG22W1KUnYLWhfhTqP4hYBWQlGppgLTJoP8NYkJJufn2ypP6qWz1w+A==
   dependencies:
     lit "^3.3.1"
 
